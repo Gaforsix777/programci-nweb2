@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+img{
+    align-items: center;
+}
+h1{
+    background-color: #9f111b;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+p{
+    font-family: monospace;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.box {
+    width: 320px;
+    height: 900px;
+    
+}
