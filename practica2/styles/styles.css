@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --color-primaria: black;
+    --color-secundaria: #4a70d4;
+    --color-terciaria: #3360c0;
+    --color-hover: #1c4fad;
+
+    --fuente-krona: 'Krona One', sans-serif;
+    --fuente-montserrat: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primaria);
+    color: var(--color-hover);
+}
+
+.header {
+    padding: 2% 0 0 15%;
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    color: var(--color-terciaria);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.presentacion {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.presentacion__contenido {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40%;
+}
+
+.presentacion__contenido__titulo {
+    font-size: 2rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque {
+    color: var(--color-terciaria);
+}
+
+.presentacion__contenido__texto {
+    font-size: 1.5rem;
+}
+
+.presentacion__enlaces {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border: 2px solid var(--color-secundaria);
+    width: 50%;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--color-secundaria);
+    font-size: 1.5rem;
+    font-family: var(--fuente-krona);
+    font-weight: 600;
+    padding: 20px;
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen {
+    width: 40%;
+    border-radius: 1rem;
+}
+
+.footer {
+    color: var(--color-primaria);
+    background-color: var(--color-terciaria);
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Media Queries para hacerlo responsivo */
+@media screen and (max-width: 1200px) {
+    .header__menu {
+        gap: 40px;
+    }
+
+    .presentacion {
+        padding: 5% 10%;
+    }
+
+    .presentacion__contenido {
+        width: 60%;
+    }
+
+    .presentacion__imagen {
+        width: 40%;
+    }
+
+    .presentacion__enlaces__link {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__menu {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .header__menu__link {
+        font-size: 1.2rem;
+    }
+
+    .presentacion {
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 5% 5%;
+    }
+
+    .presentacion__contenido {
+        width: 100%;
+        gap: 30%;
+    }
+
+    .presentacion__contenido__titulo {
+        font-size: 1.8rem;
+    }
+
+    .presentacion__contenido__texto {
+        font-size: 1.3rem;
+    }
+
+    .presentacion__imagen {
+        width: 60%;
+    }
+
+    .presentacion__enlaces__link {
+        width: 80%;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__menu {
+        gap: 15px;
+    }
+
+    .header__menu__link {
+        font-size: 1rem;
+    }
+
+    .presentacion {
+        padding: 5%;
+        flex-direction: column;
+    }
+
+    .presentacion__contenido {
+        width: 100%;
+        gap: 20%;
+    }
+
+    .presentacion__contenido__titulo {
+        font-size: 1.5rem;
+    }
+
+    .presentacion__contenido__texto {
+        font-size: 1.2rem;
+    }
+
+    .presentacion__imagen {
+
+        width: 40%;
+    }
+
+    .presentacion__enlaces__link {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        font-size: 1.2rem;
+    }
+}
