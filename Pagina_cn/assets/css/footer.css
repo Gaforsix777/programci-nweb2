@@ -1,13 +1,12 @@
-/* Estilos para el footer */
 .footer {
+    background-color: aquamarine;
     background-size: cover;
     background-position: center;
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
-    color: blakc;
+    color: black; 
     position: relative;
 }
-
 
 .footer-content {
     max-width: 1200px;
@@ -15,14 +14,64 @@
     padding: 20px;
 }
 
-
 .footer-logo {
     max-width: 150px;
     margin-bottom: 15px;
 }
 
-
 .footer p {
     font-size: 14px;
     margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+    .footer-content {
+        max-width: 1000px;
+    }
+
+    .footer-logo {
+        max-width: 130px;
+    }
+
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 15px;
+    }
+
+    .footer-logo {
+        max-width: 120px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-logo {
+        max-width: 100px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-logo {
+        max-width: 90px;
+    }
+
+    .footer p {
+        font-size: 10px;
+    }
 }

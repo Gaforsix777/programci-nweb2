@@ -1,10 +1,10 @@
 .elementos {
     display: flex;
-    justify-content: space-around; /* Distribuye los elementos uniformemente */
-    align-items: flex-start; /* Alinea los elementos al principio */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a pantallas pequeñas */
-    gap: 20px; /* Espacio entre los elementos */
-    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: clamp(2rem, 5vw, 5rem);
 }
 
 .elemento {
@@ -17,7 +17,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    width: 300px; /* Añadido un ancho fijo */
+    width: min(90%, 300px);
 }
 
 .elemento:hover {
@@ -25,25 +25,17 @@
 }
 
 .elemento__titulo {
-    color: rgb(49, 49, 49);
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     letter-spacing: 1px;
 }
 
-.elemento__figura {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
 .elemento__figura--imagen {
-    width: 50vw;
+    width: 100%;
     max-width: 200px;
     margin-bottom: 1rem;
     border-radius: 10px;
@@ -77,4 +69,44 @@
 .elemento__boton:hover {
     background-color: #e21919;
     color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .pagina {
+        background-size: cover;
+        padding: clamp(3rem, 8vh, 6rem) 1rem;
+    }
+    .pagina__content {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+    .pagina__titulo {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+    .pagina__desc {
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .pagina {
+        background-size: cover;
+        padding: clamp(2rem, 6vh, 4rem) 1rem;
+    }
+    .pagina__content {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    .pagina__titulo {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    .pagina__desc {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        max-width: 100%;
+    }
+    .pagina__boton {
+        width: 80%;
+        padding: 0.75rem;
+    }
 }

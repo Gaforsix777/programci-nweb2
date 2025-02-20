@@ -1,35 +1,117 @@
 .nosotros {
-    background-color: #f4f4f4;
+    background-color: #00AEEF;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 60vh; /* Ocupar toda la pantalla */
-    text-align: center; /* Centrar el texto */
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    padding: 20px;
 }
 
 .nosotros__container {
     display: flex;
-    flex-direction: column; /* Asegura que los elementos estén en columna */
-    align-items: center; /* Centra todo el contenido */
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     gap: 20px;
+    width: 100%;
 }
 
 .nosotros__titulo {
-    font-size: 28px;
-    color: #ff6600;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
     text-transform: uppercase;
-    font-weight: bold;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .nosotros__texto {
     font-size: 18px;
     color: #333;
     line-height: 1.5;
+    margin: 0;
 }
 
 .nosotros__imagen {
     width: 250px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px) {
+    .nosotros__container {
+        max-width: 500px;
+    }
+
+    .nosotros__titulo {
+        font-size: 24px;
+    }
+
+    .nosotros__texto {
+        font-size: 16px;
+    }
+
+    .nosotros__imagen {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nosotros__container {
+        max-width: 80%;
+    }
+
+    .nosotros__titulo {
+        font-size: 22px;
+    }
+
+    .nosotros__texto {
+        font-size: 15px;
+    }
+
+    .nosotros__imagen {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .nosotros__container {
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .nosotros__titulo {
+        font-size: 20px;
+    }
+
+    .nosotros__texto {
+        font-size: 14px;
+    }
+
+    .nosotros__imagen {
+        width: 150px;
+    }
+}
+
+@media (max-width: 360px) {
+    .nosotros__titulo {
+        font-size: 18px;
+    }
+
+    .nosotros__texto {
+        font-size: 13px;
+    }
+
+    .nosotros__imagen {
+        width: 120px;
+    }
 }
