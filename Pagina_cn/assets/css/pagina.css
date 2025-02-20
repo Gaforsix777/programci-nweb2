@@ -1,0 +1,79 @@
+.pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    color: aliceblue;
+    background-color: black;
+    min-height: 100vh; 
+    padding: clamp(8rem, 10vh, 10rem) 2rem 2rem; 
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+    
+    background-image: url('../img/port1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pagina__overlay {
+    position: absolute;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.pagina__content {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.pagina__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3rem); /* Escalado dinámico */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pagina__desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 auto 2.5rem;
+    max-width: 80%;
+    line-height: 1.6;
+    color: #d3d3d3;
+}
+
+.pagina__boton {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    width: 50%;
+    padding: 1rem;
+    border: 3px solid #FFF000;
+    border-radius: 50px; 
+    background-color: transparent;
+    color:  #FFF000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pagina__boton:hover {
+    background-color: #FFF000;
+    color: aliceblue;
+}
+
+@media screen and (min-width: 750px) {
+    .pagina {
+        padding-top: 1rem;
+    }
+}

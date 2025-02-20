@@ -1,0 +1,49 @@
+.head {
+    color: aliceblue;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    border-bottom: 1px solid #0b0606;
+    padding: 0.5rem 0;
+    background-color: rgb(8, 21, 22);
+    justify-content: space-between;
+    z-index: 1000; 
+    transition: background-color 0.3s ease; 
+}
+
+.head:hover {
+    background-color: #FFF000; 
+}
+
+.head__logo {
+    height: 75px;
+    margin-bottom: 1rem;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.head__logo:hover {
+    transform: scale(1.1); 
+}
+
+.head_nav {
+    text-align: center;
+    flex-grow: 1; 
+}
+
+.head__link {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    margin: 0 0.5rem 0.5rem;
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+.head__link:hover {
+    color: #ffcc00; 
+}
