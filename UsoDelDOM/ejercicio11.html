@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar elemento con removeChild</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="elementoeliminado">
+            Elemento Null
+        </div>
+    </div>
+
+    <script>
+        const elementoeliminado = document.getElementById("elementoeliminado");
+        const elementoPadre = elementoeliminado.parentNode; // Cambié a 'parentNode'
+        elementoPadre.removeChild(elementoeliminado); // Pasamos el objeto, no una cadena
+    </script>
+</body>
+</html>

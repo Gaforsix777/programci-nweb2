@@ -8,4 +8,4 @@ function palabraMasLarga(frase) {
     }
     return palabraLarga;
 }
-console.log(palabraMasLarga("El juego fortnite es el mejor del mundo")); 
+console.log(palabraMasLarga("El juego fortnite es el mejor del mundo para todos los jugadores")); 
