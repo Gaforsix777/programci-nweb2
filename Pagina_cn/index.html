@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pagina2</title>
+    <title>Pagina Cartoon Network</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/head.css">
@@ -12,51 +12,68 @@
     <link rel="stylesheet" href="assets/css/mensaje.css">
     <link rel="stylesheet" href="assets/css/nosotros.css">
     <link rel="stylesheet" href="assets/css/footer.css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Barra superior para elegir modo de color -->
+    
+
+    <!-- Header -->
     <header class="head">
         <img class="head__logo" src="assets/img/logo.png" alt="logo">
         <nav class="head__nav">
             <ul>
-                <li class="head__link"><a href="#pagina">inicio</a></li>
-                <li class="head__link"><a href="#portada">portada</a></li>
+                <li class="head__link"><a href="#pagina">Inicio</a></li>
+                <li class="head__link"><a href="#portada">Portada</a></li>
                 <li class="head__link"><a href="#tienda">Tienda</a></li>
                 <li class="head__link"><a href="#contactos">Contactos</a></li>
-                <li class="head__link"><a href="#nosotros">Nosostros</a></li>
+                <li class="head__link"><a href="#nosotros">Nosotros</a></li>
             </ul>
         </nav>
+        <div id="colorModeSelector">
+            <button id="defaultModeBtn" class="mode-btn"><i class="fas fa-circle"></i> Default</button>
+            <button id="darkModeBtn" class="mode-btn"><i class="fas fa-moon"></i> Oscuro</button>
+            <button id="lightModeBtn" class="mode-btn"><i class="fas fa-sun"></i> Claro</button>
+        </div>
+        <div id="carrito">
+            <p>Carrito: <span id="cantidad-carrito">0</span> productos</p>
+        </div>
     </header>
+
+    <!-- Main Content -->
     <main>
+        <!-- Sección Página -->
         <section class="pagina" id="pagina">
-            <h1 class="pagina__titulo"> TIENDA CARTOON</h1>
+            <h1 class="pagina__titulo">Tienda Cartoon</h1>
             <p class="pagina__desc">Los mejores productos de tus series favoritas</p>
-            <a class="pagina__boton" href="#"> informacion de boton</a>
+            <a class="pagina__boton" href="#">Información del botón</a>
         </section>
-        <h1  class="titulos" >tienda</h1>
+
+        <!-- Filtro de productos -->
+        <input type="text" id="filtroProductos" placeholder="Buscar productos..." />
+
+        <!-- Tienda -->
         <section class="elementos" id="tienda">
             <div class="elemento">
                 <h2 class="elemento__titulo">Muñeco 1</h2>
                 <a href="#">
                     <figure class="elemento__figura">
                         <img class="elemento__figura--imagen" src="assets/img/prod1.jpg" alt="Imagen 1">
-                        <figcaption class="elemento__figura--texto">Sera tu mejor amigo</figcaption>
+                        <figcaption class="elemento__figura--texto">Será tu mejor amigo</figcaption>
                     </figure>
                 </a>
-                <a class="elemento__boton" href="#">Comprar</a>
+                <a class="elemento__boton" href="#">Agregar</a>
             </div>
-        
             <div class="elemento">
                 <h2 class="elemento__titulo">Muñeco 2</h2>
                 <a href="#">
                     <figure class="elemento__figura">
                         <img class="elemento__figura--imagen" src="assets/img/prod2.jpg" alt="Imagen 2">
-                        <figcaption class="elemento__figura--texto">Tu mejor cientifico</figcaption>
+                        <figcaption class="elemento__figura--texto">Tu mejor científico</figcaption>
                     </figure>
                 </a>
-                <a class="elemento__boton" href="#">Comprar</a>
+                <a class="elemento__boton" href="#">Agregar</a>
             </div>
-        
             <div class="elemento">
                 <h2 class="elemento__titulo">Muñeco 3</h2>
                 <a href="#">
@@ -65,11 +82,13 @@
                         <figcaption class="elemento__figura--texto">No lo hagas enojar demasiado</figcaption>
                     </figure>
                 </a>
-                <a class="elemento__boton" href="#">Comprar</a>
+                <a class="elemento__boton" href="#">Agregar</a>
             </div>
         </section>
-        <h1  class="titulos" >contactos</h1>
+
+        <!-- Contactos -->
         <section class="contactos" id="contactos">
+            <h1 class="titulos">Contactos</h1>
             <ul class="contactos__lista">
                 <li class="contactos__item">
                     <img src="assets/img/perfil1.jpg" alt="Jose Ramiro" class="contactos__foto">
@@ -88,29 +107,36 @@
                 </li>
             </ul>
         </section>
-    
-        
 
+        <!-- Nosotros -->
         <section class="nosotros" id="nosotros">
-            <div class="nosotros__container">
-                <div class="nosotros__contenido">
-                    <h1 class="nosotros__titulo">Sobre Nosotros</h1>
-                    <p class="nosotros__texto">
-                        Bienvenidos a nuestra web inspirada en Cartoon Network. Aquí celebramos las mejores caricaturas que marcaron nuestra infancia con contenido especial, curiosidades y mucho más. ¡Únete a la diversión!
-                    </p>
-                </div>
-                <img class="nosotros__imagen" src="assets/img/pord4.jpg" alt="Imagen sobre nosotros">
-            </div>
+            <h1 class="nosotros__titulo">Sobre Nosotros</h1>
+            <p class="nosotros__texto">
+                Bienvenidos a nuestra web inspirada en Cartoon Network. Aquí celebramos las mejores caricaturas que marcaron nuestra infancia con contenido especial, curiosidades y mucho más. ¡Únete a la diversión!
+            </p>
+            <img class="nosotros__imagen" src="assets/img/pord4.jpg" alt="Imagen sobre nosotros">
         </section>
-        
     </main>
 
+    <!-- Modal -->
+    <div id="modal" style="display: none;">
+        <div id="modalContent">
+            <h2 id="modalTitulo">Detalles del producto</h2>
+            <p id="modalDescripcion">Descripción del producto...</p>
+            <button id="cerrarModal">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <img src="assets/img/logo.png" alt="Logo" class="footer-logo">
-            <p> BY LAIME MIRANDA JOSE RAMIRO 2025</p>
+            <p>BY LAIME MIRANDA JOSE RAMIRO 2025</p>
         </div>
     </footer>
-    
+
+    <!-- Scripts -->
+    <script src="script.js">
+    </script>
 </body>
 </html>

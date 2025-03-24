@@ -1,55 +1,213 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden; 
 }
+
 body {
-	background: #00AEEF ;
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    background: #00AEEF;
+    line-height: 1;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+.default {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+.default a {
+    color: #ece806;
+}
+
+.default header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.default button {
+    background-color: #ffcc00;
+    color: #000000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.default button:hover {
+    background-color: #ffd633;
+}
+
+.default .elemento__titulo {
+    color: #dab306;
+}
+
+.default .elemento__boton {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.dark-mode a {
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode button {
+    background-color: #ff5722;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dark-mode button:hover {
+    background-color: #ff784e;
+}
+
+.dark-mode .elemento__titulo {
+    color: #000000;
+}
+
+.dark-mode .elemento__boton {
+    background-color: #ff5722;
+    color: #ffffff;
+}
+
+.light-mode {
+    background-color: #f0f8ff;
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+}
+
+.light-mode a {
+    color: #000000;
+}
+
+.light-mode header {
+    background-color: #00aeef;
+    color: #ffffff;
+}
+
+.light-mode button {
+    background-color: #00c853;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.light-mode button:hover {
+    background-color: #33d17a;
+}
+
+.light-mode .elemento__titulo {
+    color: #000000;
+}
+
+.light-mode .elemento__boton {
+    background-color: #00c853;
+    color: #ffffff;
+}
+
+.mode-btn:hover {
+    background-color: #333;
+}
+
+.mode-btn:active {
+    background-color: #666;
+}
+
+#menuCarrito {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+#menuCarrito ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menuCarrito li {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+
+#menuCarrito button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#menuCarrito button:hover {
+    background-color: #d32f2f;
+}
+
+.buscador {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.buscador input {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buscador input:focus {
+    outline: none;
+    border-color: #00aeef;
+    box-shadow: 0 0 5px rgba(0, 174, 239, 0.5);
+}
+
+@media (max-width: 768px) {
+    .head__nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buscador input {
+        width: 90%;
+    }
+
+    #menuCarrito {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .mode-btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    .buscador input {
+        font-size: 14px;
+    }
 }
