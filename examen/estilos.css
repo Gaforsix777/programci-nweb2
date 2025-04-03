@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fceae8;
+    padding: 40px;
+    margin: 0;
+}
+
+#container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-left: 10px solid #e74c3c;
+    border-top: 5px solid #e74c3c;
+}
+
+h2 {
+    color: #b03a2e;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: calc(100% - 120px);
+    padding: 10px;
+    border: 2px solid #e6b0aa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin: 5px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+[data-output] {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #b03a2e;
+    text-align: center;
+}
+
+.task {
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff5f5;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    background-color: #fdebd0;
+}
+
+.relleno {
+    background-color: yellow !important;
+}
+
+.tachado {
+    text-decoration: line-through;
+    color: red;
+}
