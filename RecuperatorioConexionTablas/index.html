@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Gestor de Tareas</h1>
+
+  <div class="input-container">
+    <input type="text" class="input-task" placeholder="Task">
+    <input type="date" class="input-date">
+    <input type="text" class="input-desc" placeholder="Descripción">
+    <input type="text" class="input-name" placeholder="Nombre">
+    <input type="number" class="input-value" placeholder="Valor">
+
+    <div class="btns">
+      <button class="btn btn-add">➕ Agregar</button>
+    </div>
+  </div>
+
+  <div id="result" style="margin-top: 10px;"></div>
+
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+        <th>Nombre</th>
+        <th>Valor</th>
+        <th>Acciones</th> <!-- Nueva columna para los botones por fila -->
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <!-- Aquí se renderizan las filas -->
+    </tbody>
+  </table>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

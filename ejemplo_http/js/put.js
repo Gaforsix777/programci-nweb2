@@ -1,14 +1,24 @@
-const deleteData =()=> {
-    fetch(${API_URL}/1, {
-        method: 'DELETE'
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error(`Error en la respuesta el estado es: ${response.status}`);
-        }
-        showResult({
-            message: 'Post con id 1 fue eliminado correctamente',
-            status: response.status
-        });
+const putData = () => {
+    const update = {
+        titulo: "Actualizado",
+        descripcion: "actualizado",
+        fecha: new Date().toISOString()
+    };
 
-}).catch(error => showResult(error.message, true));
+    fetch(`${API_URL}/5726`, { // Cambiado a backticks para interpolación
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json", // Corregido el error tipográfico
+            "Accept": "application/json" // Corregido el error tipográfico
+        },
+        body: JSON.stringify(update)
+    })
+    .then(response => { // Cambiado Response a response
+        if (!response.ok) {
+            throw new Error(`Error en la respuesta estado: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => showResult(data))
+    .catch(error => showResult(error.message, true));
 };

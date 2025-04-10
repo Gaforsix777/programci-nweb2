@@ -1,23 +1,23 @@
 const postData =()=>{
-    const newPost ={
-        titulo: "nuevo Post",
-        descripcion: "nueva descripcion",
-        fecha: new Date().toISOtring()
+    const newPost={
+        titulo:"Nuevo Post",
+        descripcion:"nueva descripcion",
+        fecha: new Date().toISOString()
     };
-    fetch (API_URL,{
-        method: 'POST',
+
+    fetch(API_URL,{
+        method:"POST",
         headers:{
-            'Content-Type': 'application/json',
-            "accept": "application/json"
+            "Content-Type": "application/json",
+            "Accept": "application/json"
         },
-        body: JSON.stringify(newPost)
+        body:JSON.stringify(newPost)
     })
-    .then(response => {
-        if (!response.ok){
-            throw new Error(`error en la peticion post el esta es  ${response.status}`);
-        
+    .then(Response=>{
+        if(!Response.ok){
+            throw new Error ('Error en la respuesta estado: ${response.status}')
         }
-        return response.json()
-    }).then(data => console.log(data))
-    .catch(error => console.log(error));
+        return Response.json();
+    }).then(data=>showResult(data))
+    .catch(error=>showResult(error.message,true));
 }

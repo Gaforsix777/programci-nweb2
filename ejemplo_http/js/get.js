@@ -1,15 +1,13 @@
-const API_URL = 'https://localhost:3000/posts'
+const API_URL='http://localhost:3000/posts'
 
-const getDatas = async () => {
+const getData=()=>{
     fetch(API_URL)
-    .then(response => {
-        if (!response.ok){
-            throw new Error(`error en la peticion get el esta es  ${response.status}`);
-        
-            }
-            return response.json()
-        })
-        .then(data => showResults(data))
-        .catch(error => showResult(error,MessageChannel,true));
-
-    }
+       .then(response =>{
+           if(!response.ok){
+               throw new Error('error en la peticion get, el estado es: ${response.status}')
+           }
+           return response.json()
+       })
+       .then(data => showResult(data))
+       .catch(error => showResult(error.message,true));
+};
