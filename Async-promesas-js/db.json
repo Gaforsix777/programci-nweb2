@@ -3,7 +3,21 @@
     {
       "nombre": "fulanito",
       "email": "fulanito@gmail.com",
-      "id": 1
+      "id": "1"
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "leche",
+      "precio": 12,
+      "descripcion": "la mejor leche",
+      "id": "65b2"
+    },
+    {
+      "id": "1324",
+      "nombre": "carne",
+      "precio": 12,
+      "descripcion": "la mejor carne"
     }
   ]
 }
