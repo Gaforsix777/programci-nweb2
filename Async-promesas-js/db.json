@@ -18,6 +18,12 @@
       "nombre": "carne",
       "precio": 12,
       "descripcion": "la mejor carne"
+    },
+    {
+      "id": "2edb",
+      "nombre": "leche",
+      "precio": 12,
+      "descripcion": "milks"
     }
   ]
 }

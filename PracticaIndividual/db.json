@@ -1,0 +1,11 @@
+{
+  "juegos": [
+    {
+      "id": "0020",
+      "nombre": "Fortnite",
+      "plataforma": "Epic Games",
+      "genero": "Accion",
+      "completado": true
+    }
+  ]
+}

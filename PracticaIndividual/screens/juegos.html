@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juegos Favoritos</title>
+  <link rel="stylesheet" href="../assets/css/juegos.css" />
+</head>
+<body>
+  <h1>🎮 Juegos Favoritos</h1>
+
+  <form class="formulario" data-formulario>
+    <label for="nombre">Nombre del juego</label>
+    <input type="text" id="nombre" data-nombre required />
+
+    <label for="plataforma">Plataforma</label>
+    <input type="text" id="plataforma" data-plataforma required />
+
+    <label for="genero">Género</label>
+    <input type="text" id="genero" data-genero required />
+
+    <label>
+      <input type="checkbox" id="completado" data-completado /> Completado
+    </label>
+
+    <button type="submit" class="button">Agregar juego</button>
+  </form>
+
+  <section class="contenedor-juegos" data-contenedor></section>
+
+  <script type="module" src="../controllers/juego-controller.js"></script>
+</body>
+</html>
