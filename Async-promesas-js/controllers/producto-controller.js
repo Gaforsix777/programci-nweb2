@@ -10,6 +10,7 @@ const btnSubmit = form.querySelector(".button");
 const crearTarjeta = (nombre, precio, descripcion, id) => {
   const tarjeta = document.createElement("div");
   tarjeta.className = "card-producto";
+
   tarjeta.innerHTML = `
     <h3>${nombre}</h3>
     <p><strong>Precio:</strong> $${parseFloat(precio).toFixed(2)}</p>
@@ -18,10 +19,13 @@ const crearTarjeta = (nombre, precio, descripcion, id) => {
     <button class="edit-button" data-id="${id}">Editar</button>
   `;
 
-  tarjeta.querySelector(".delete-button").addEventListener("click", () => {
-    productService.eliminarProducto(id)
-      .then(() => tarjeta.remove())
-      .catch(() => alert("Error al eliminar producto"));
+  tarjeta.querySelector(".delete-button").addEventListener("click", async () => {
+    try {
+      await productService.eliminarProducto(id);
+      tarjeta.remove();
+    } catch (error) {
+      alert("Error al eliminar producto");
+    }
   });
 
   tarjeta.querySelector(".edit-button").addEventListener("click", () => {
@@ -35,14 +39,19 @@ const crearTarjeta = (nombre, precio, descripcion, id) => {
   return tarjeta;
 };
 
-productService.listaProductos().then((data) => {
-  data.forEach(({ nombre, precio, descripcion, id }) => {
-    const tarjeta = crearTarjeta(nombre, precio, descripcion, id);
-    contenedor.appendChild(tarjeta);
-  });
-}).catch(() => alert("Error al cargar productos"));
+const cargarProductos = async () => {
+  try {
+    const productos = await productService.listaProductos();
+    productos.forEach(({ nombre, precio, descripcion, id }) => {
+      const tarjeta = crearTarjeta(nombre, precio, descripcion, id);
+      contenedor.appendChild(tarjeta);
+    });
+  } catch (error) {
+    alert("Error al cargar productos");
+  }
+};
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const nombre = inputNombre.value.trim();
@@ -55,21 +64,22 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  if (idEditar) {
-    productService.editarProducto(idEditar, nombre, precio, descripcion)
-      .then(() => {
-        form.reset();
-        form.removeAttribute("data-edit-id");
-        btnSubmit.textContent = "Registrar producto";
-        location.reload();
-      })
-      .catch(() => alert("Error al actualizar"));
-  } else {
-    productService.crearProducto(nombre, precio, descripcion)
-      .then(() => {
-        form.reset();
-        window.location.href = "./registro_completado.html";
-      })
-      .catch(() => alert("Error al registrar"));
+  try {
+    if (idEditar) {
+      await productService.editarProducto(idEditar, nombre, precio, descripcion);
+      form.removeAttribute("data-edit-id");
+      btnSubmit.textContent = "Registrar producto";
+      form.reset();
+      location.reload();
+    } else {
+      await productService.crearProducto(nombre, precio, descripcion);
+      form.reset();
+      window.location.href = "./lista_producto.html";
+
+    }
+  } catch (error) {
+    alert(idEditar ? "Error al actualizar producto" : "Error al registrar producto");
   }
 });
+
+cargarProductos();

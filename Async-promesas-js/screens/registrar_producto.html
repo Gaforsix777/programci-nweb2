@@ -1,225 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Doguito Petshop | Registro de producto</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doguito Petshop | Registro de producto</title>
+    <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base/base.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/header.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/card.css" />
+    <link rel="stylesheet" href="../assets/css/register_client.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/inputs.css" />
+    <link rel="stylesheet" href="../assets/css/componentes/button.css" />
+    <script type="module" src="../controllers/producto-controller.js"></script>
 
-  <link rel="icon" href="../assets/img/doguitoadm.svg" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/base/base.css" />
-  <link rel="stylesheet" href="./assets/css/componentes/header.css" />
-  <link rel="stylesheet" href="./assets/css/componentes/card.css" />
-  <link rel="stylesheet" href="./assets/css/register_client.css" />
-  <link rel="stylesheet" href="./assets/css/componentes/inputs.css" />
-  <link rel="stylesheet" href="./assets/css/componentes/button.css" />
-  <link rel="stylesheet" href="./assets/css/register_product.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <img
+        src="./assets/img/doguitoadm.svg"
+        alt="Logo Doguito"
+        class="header_logo"
+      />
+      <nav>
+        <ul class="header__list-nav">
+          <li class="header__link"><a href="#">Dashboard</a></li>
+          <li class="header__link"><a href="#">Productos</a></li>
+          <li class="header__link">
+            <a href="lista_cliente.html">Clientes </a>
+          </li>
+          <li class="header__link"><a href="#">Pets</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container flex flex--center flex--column">
+      <section class="card cadastro">
+        <h1 class="card__title">Registrar un producto</h1>
+        <form class="flex flex--column" data-formulario>
+          <div class="input-container">
+            <input name="nombre" id="nombre" class="input" type="text" placeholder="nombre" data-nombre />
+            <label class="input-label" for="nombre">Nombre</label>
+            <span class="input-menssage-error">Error</span>
+          </div>
+        
+          <div class="input-container register__price-container">
+            <input name="precio" id="precio" class="input" type="text" placeholder="Precio" data-precio />
+            <label class="input-label" for="precio">Precio</label>
+            <span class="input-menssage-error">Error</span>
+          </div>
+        
+          <div class="textarea-container register_description-container">
+            <textarea class="textarea register_description" name="description" id="description" placeholder="Descripcion" data-descripcion></textarea>
+            <label class="textarea-label" for="description">Descripcion</label>
+            <span class="textarea-menssage-error">Error</span>
+          </div>
+        
+          <button type="submit" class="button">Registrar producto</button>
+        </form>
+        <script type="module" src="../controllers/producto_form_controller.js"></script>
 
-  <style>
-    /* === BASE GENERAL === */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-  
-    main.container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
-    }
-  
-    /* === FORMULARIO === */
-    .card.cadastro {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 40px 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 50px;
-    }
-  
-    .card__title {
-      font-family: 'Pacifico', cursive;
-      font-size: 30px;
-      color: #fe5733;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  
-    .input-container,
-    .textarea-container {
-      margin-bottom: 20px;
-    }
-  
-    .input-label,
-    .textarea-label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 6px;
-      color: #444;
-    }
-  
-    .input,
-    .textarea {
-      width: 100%;
-      padding: 12px 15px;
-      font-size: 16px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s;
-      background-color: #fafafa;
-    }
-  
-    .input:focus,
-    .textarea:focus {
-      border-color: #fe5733;
-      outline: none;
-      background-color: #fff;
-    }
-  
-    .button {
-      background-color: #fe5733;
-      border: none;
-      color: white;
-      font-size: 17px;
-      font-weight: 600;
-      padding: 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 10px;
-      transition: background-color 0.3s ease;
-    }
-  
-    .button:hover {
-      background-color: #d94c29;
-    }
-  
-    /* === PRODUCTOS REGISTRADOS === */
-    h2 {
-      text-align: center;
-      font-size: 24px;
-      color: #222;
-      margin-bottom: 20px;
-    }
-  
-    .grid-productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      width: 100%;
-      max-width: 1200px;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-  
-    .card-producto {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: 1px solid #eee;
-    }
-  
-    .card-producto:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
-  
-    .card-producto h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-  
-    .card-producto p {
-      font-size: 16px;
-      color: #666;
-      margin: 6px 0;
-    }
-  
-    .delete-button {
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      font-size: 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-  
-    .delete-button:hover {
-      background-color: #b52a36;
-    }
-  
-    /* === RESPONSIVE === */
-    @media (max-width: 600px) {
-      .card.cadastro {
-        padding: 30px 20px;
-      }
-  
-      .card__title {
-        font-size: 24px;
-      }
-  
-      .button {
-        font-size: 16px;
-      }
-    }
-  </style>
-  
-  
-</head>
-<body>
-  <header class="header container">
-    <img src="./assets/img/doguitoadm.svg" alt="Logo Doguito" class="header_logo" />
-    <nav>
-      <ul class="header__list-nav">
-        <li class="header__link"><a href="#">Dashboard</a></li>
-        <li class="header__link"><a href="#">Productos</a></li>
-        <li class="header__link"><a href="lista_cliente.html">Clientes</a></li>
-        <li class="header__link"><a href="#">Pets</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container flex flex--center flex--column">
-    <section class="card cadastro">
-      <h1 class="card__title">Registrar un producto</h1>
-      <form class="flex flex--column" data-formulario>
-        <div class="input-container">
-          <input class="input" type="text" placeholder="nombre" data-nombre />
-          <label class="input-label">nombre</label>
-          <span class="input-menssage-error">Error</span>
-        </div>
-        <div class="input-container register__price-container">
-          <input class="input" type="number" placeholder="Precio" data-precio />
-          <label class="input-label">Precio</label>
-          <span class="input-menssage-error">Error</span>
-        </div>
-        <div class="textarea-container register_description-container">
-          <textarea class="textarea register_description" placeholder="Descripcion" data-descripcion></textarea>
-          <label class="textarea-label">Descripcion</label>
-          <span class="textarea-menssage-error">Error</span>
-        </div>
-        <button type="submit" class="button">Registrar producto</button>
-      </form>
-    </section>
-
-    <section style="width: 100%;">
-      <h2 style="text-align:center; margin-top: 40px;">Productos Registrados</h2>
-      <div class="grid-productos" data-productos></div>
-    </section>
-  </main>
-
-  <script type="module" src="../controllers/producto-controller.js"></script>
-</body>
+      </section>
+    </main>
+  </body>
 </html>

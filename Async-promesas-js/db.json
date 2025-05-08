@@ -1,29 +1,14 @@
 {
   "perfil": [
     {
-      "nombre": "fulanito",
-      "email": "fulanito@gmail.com",
-      "id": "1"
-    }
-  ],
-  "productos": [
-    {
-      "nombre": "leche",
-      "precio": 12,
-      "descripcion": "la mejor leche",
-      "id": "65b2"
+      "nombre": "dede",
+      "email": "dedw",
+      "id": "6dd9c7a3-cdc0-4d83-9e2d-57989841b0cf"
     },
     {
-      "id": "1324",
-      "nombre": "carne",
-      "precio": 12,
-      "descripcion": "la mejor carne"
-    },
-    {
-      "id": "2edb",
-      "nombre": "leche",
-      "precio": 12,
-      "descripcion": "milks"
+      "nombre": "gfb",
+      "email": "fffoooo",
+      "id": "bc49db6a-251a-4006-b5bb-1ddd1c0e3673"
     }
   ]
 }
