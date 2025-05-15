@@ -178,6 +178,7 @@ export const clientService = {
     clientes,
     actualizarCliente
 };
+*/
 
 /*
 const API_BASE_URL='http://localhost/api1/conexion.php';
@@ -232,76 +233,94 @@ export const clientService = {
     actualizarCliente
 };
 */
+
+
+
+
+
+
+
 const SUPABASE_URL = 'https://asosaczseaytvvfjntbn.supabase.co';
-const SUPABASE_key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzb3NhY3pzZWF5dHZ2ZmpudGJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzY4OTIsImV4cCI6MjA2MjQ1Mjg5Mn0.yhBpAViOHBVQkrEX88QEXyz0AyR0bi93nt54dO7Snjw'
-const TABLE ='Clientes';
-const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`;//ME INDICA A QUE TABLA ME QUIERO CONECTAR
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzb3NhY3pzZWF5dHZ2ZmpudGJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY4NzY4OTIsImV4cCI6MjA2MjQ1Mjg5Mn0.yhBpAViOHBVQkrEX88QEXyz0AyR0bi93nt54dO7Snjw';
+const TABLE = 'clientes';
+const API_URL = `${SUPABASE_URL}/rest/v1/${TABLE}`;
 const HEADERS = {
-    'apikey': SUPABASE_key,
-    'Authorization': `Bearer ${SUPABASE_key}`,
-    'Content-Type': 'application/json'
-}
-//
-const listaclientes = () => {
-    return fetch(`${API_URL}?select=*`, {headers: HEADERS})
-        .then(res=>    {
-            if (!res.ok) throw new Error('Error al obtener clientes');
-            return res.json();
-        });
-};
-const crearCliente = (nombre, email) => {
-    const cliente = {
-        nombre,
-        email,
-        Id: uuid.v4()
-    };
-    return fetch(API_URL,{
-        method:'POST',
-        headers: HEADERS,
-        body: JSON.stringify(cliente)
-    })
-    .then(async (res) => {
-        if (!res.ok) {
-            const text= await res.text();//responde el error en texto
-            throw new Error(text);
-        }
-        const text= await res.text();//responde el error en texto
-        return text ? JSON.parse(text) : {};//si no hay error lo parseo a json
-    }).catch((error)=> {
-        console.error('Error al crear cliente:', error);
-        throw error;
-    });
-};
-const eliminarCliente = (id) => { // valor de entrada da referencia a eliminar
-    return fetch(`${API_URL}?Id=eq.${id}`, {
-        method: 'DELETE',
-        headers: HEADERS
-    }).then(res => {
-        if (!res.ok) throw new Error('Error al eliminar cliente');
-        return res.json();
-    });
+  'apikey': SUPABASE_KEY,
+  'Authorization': `Bearer ${SUPABASE_KEY}`,
+  'Content-Type': 'application/json',
 };
 
-const clientes = (id) => {
-    return fetch(`${API_URL}?Id=eq.${id}`, {headers: HEADERS})
-        .then(res => {
-            if (!res.ok) throw new Error('Error al obtener cliente');
-            return res.json();
-        });
+// Obtener todos los clientes
+const listaClientes = () => {
+  return fetch(`${API_URL}?select=*`, {
+    headers: HEADERS
+  }).then(res => {
+    if (!res.ok) throw new Error('Error al listar clientes');
+    return res.json();
+  });
 };
+
+// Crear cliente (sin enviar id)
+const crearCliente = (nombre, email) => {
+  const cliente = { nombre, email };
+
+  return fetch(API_URL, {
+    method: 'POST',
+    headers: HEADERS,
+    body: JSON.stringify(cliente)
+  }).then(async res => {
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(text || 'Error al insertar cliente');
+    }
+    const text = await res.text();
+    return text ? JSON.parse(text) : cliente;
+  }).catch(error => {
+    console.error("Error al crear cliente", error);
+    throw error;
+  });
+};
+
+// Eliminar cliente
+const eliminarCliente = (id) => {
+  return fetch(`${API_URL}?id=eq.${id}`, {
+    method: 'DELETE',
+    headers: HEADERS
+  }).then(res => {
+    if (!res.ok) throw new Error('Error al eliminar cliente');
+    return res.json();
+  });
+};
+
+// Obtener cliente por id
+const cliente = (id) => {
+  return fetch(`${API_URL}?id=eq.${id}`, {
+    headers: HEADERS
+  }).then(res => {
+    if (!res.ok) throw new Error('Error al obtener cliente');
+    return res.json();
+  });
+};
+
+// Actualizar cliente
 const actualizarCliente = (nombre, email, id) => {
-    return fetch(`${API_URL}?Id=eq.${id}`, {
-        method: 'PATCH',
-        headers: {...HEADERS,
-        'preferred': 'return=representation'},
+  return fetch(`${API_URL}?id=eq.${id}`, {
+    method: 'PATCH',
+    headers: {
+      ...HEADERS,
+      'Prefer': 'return=representation'
+    },
     body: JSON.stringify({ nombre, email })
-    })
-}
+  }).then(res => {
+    if (!res.ok) throw new Error('Error al actualizar cliente');
+    return res.json();
+  });
+};
 
 export const clientService = {
-    listaclientes,
-    crearCliente,
-    eliminarCliente,
-    clientes,
-    actualizarCliente
+  listaClientes,
+  crearCliente,
+  eliminarCliente,
+  cliente,
+  actualizarCliente
 };
