@@ -50,3 +50,4 @@ export const petService = {
   crearPet,
   eliminarPet
 };
+//una vez hechos las tablas en supabase ahora en el visual anteriormente creamos una estructura 

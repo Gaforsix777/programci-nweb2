@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Boletos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <h2>Compra de Boletos</h2>
+
+  <form id="formBoleto">
+    <input type="hidden" id="id">
+    <label>Cliente:</label>
+    <select id="cliente_id"></select><br>
+
+    <label>Película:</label>
+    <select id="pelicula_id"></select><br>
+
+    <input type="date" id="fecha"><br>
+    <input type="time" id="hora"><br>
+    <input type="text" id="asiento" placeholder="Asiento"><br>
+    <input type="number" id="precio" placeholder="Precio"><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h3>Boletos registrados</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Película</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Asiento</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tablaBoletos"></tbody>
+  </table>
+
+  <script type="module" src="js/registrar_boleto.js"></script>
+</body>
+</html>

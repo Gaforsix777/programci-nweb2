@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Películas</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <h2>Gestión de Películas</h2>
+
+  <form id="formPelicula">
+    <input type="hidden" id="id">
+    <input type="text" id="titulo" placeholder="Título"><br>
+    <input type="text" id="descripcion" placeholder="Descripción"><br>
+    <input type="text" id="clasificacion" placeholder="Clasificación"><br>
+    <input type="number" id="duracion" placeholder="Duración (min)"><br>
+    <select id="sala_id"></select><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h3>Películas registradas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Clasificación</th>
+        <th>Duración</th>
+        <th>Sala</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tablaPeliculas"></tbody>
+  </table>
+
+  <script type="module" src="js/registrar_pelicula.js"></script>
+</body>
+</html>

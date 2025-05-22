@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Salas</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <h2>Gestión de Salas</h2>
+
+  <form id="formSala">
+    <input type="hidden" id="id">
+    <input type="text" id="nombre" placeholder="Nombre de la sala"><br>
+    <input type="number" id="capacidad" placeholder="Capacidad"><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h3>Salas registradas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Capacidad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tablaSalas"></tbody>
+  </table>
+
+  <script type="module" src="js/registrar_sala.js"></script>
+</body>
+</html>
